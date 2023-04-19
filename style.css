@@ -1,0 +1,591 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-y:auto;
+}
+
+/*
+x rem = x taile de l'élément parent et em = taille de caractère de l'élément en cours; ce sont des unité de mesure utilisé pour la taille des polices
+*/
+
+
+/*Ici il y aura le style de la barre de navigation*/
+
+.container-header {
+    width: 100vw;
+    height: 160px;
+    color: #000;
+    background: rgba(255, 255, 255, 0.8);
+    /*background: rgb(6,108,50);
+    background: linear-gradient(90deg, rgba(6,108,50,1) 0%, rgba(255,255,255,1) 50%, rgba(193,4,4,1) 100%);*/
+}
+
+.container-header header {
+    width: 100%;
+    height: 100%;
+}
+
+.container-header header nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    justify-content: space-evenly;
+    vertical-align: baseline;
+    align-items: center;
+    align-content: center;
+}
+
+.links-nav {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    align-items: center;
+    justify-content: space-between;
+    justify-items: center;
+    width: 60vw;
+    height: 100%;
+}
+    
+.title {
+    grid-area: 1 / 1 / 2 / 10;
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.title img {
+    transform: rotate(-45deg);
+}
+
+.accueil {
+    grid-area: 2 / 1 / 3 / 4;
+    font-size: 1.1rem;
+}
+
+.menu {
+    grid-area: 2 / 4 / 3 / 7;
+    font-size: 1.1rem;
+}
+
+.contact {
+    grid-area: 2 / 7 / 3 / 10;
+    font-size: 1.1rem;
+}
+
+.container-header header nav .links-nav a.active {
+    color: rgb(34, 91, 137);
+    text-decoration: underline;
+}
+
+.container-header header nav .links-nav a {
+    color: #000;
+    transition: color .4s ease-in-out;
+    font-size: 1.1rem;
+}
+
+.container-header header nav .links-nav a:hover {
+    color: rgb(34, 91, 137);
+}
+
+/*Ici il y aura le style pour la partie principale du site*/
+
+.container-main {
+    width: 100vw;
+    height: 100vh;
+}
+
+.container-main video { 
+    object-fit: cover;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -100;
+}
+
+.container-main main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+}
+
+.container-main main #main-discover {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    color: #FFF;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 40px 10px 40px 10px;
+    width: 40vw;
+    height: 20vh;
+    margin-top: 50px;
+}
+
+.container-main main #main-discover p {
+    text-transform: uppercase;
+}
+
+.container-main main #main-discover .discover-btn {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+    border: none;
+    border-radius: 40px 10px 40px 10px;
+    padding: 20px;
+    background: linear-gradient(90deg, rgba(6,108,50,1) 0%, rgba(255,255,255,1) 50%, rgba(193,4,4,1) 100%);
+    color: #000;
+    font-weight: 500;
+    width: 130px;
+    height: 30px;
+    transition: all .4s ease-in-out;
+}
+
+.container-main main #main-discover .discover-btn:hover {
+    width: 200px;
+}
+
+.container-main main #main-discover .discover-btn a {
+    color: inherit;
+    transition: all .4s ease-in-out;
+}
+
+.container-main main #main-discover .discover-btn:hover {
+    color: rgb(34, 91, 137);
+}
+
+.container-main main .main-pub {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.container-main main .main-pub article {
+    width: 40vw;
+    height: 70%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+    color: #FFF;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 40px 10px 40px 10px;
+}
+
+.container-main main .main-pub article .article-food {
+    width: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;
+}
+
+.container-main main .main-pub article .article-food p {
+    width: 40%;
+}
+
+.container-main main .main-pub article .article-food #f-a-photo {
+    background: url(/image/AdobeStock_280393558.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    height: 40vh;
+    border-radius: 40px 10px 40px 10px;
+}
+
+.container-main main .main-pub article .article-food #s-a-photo {
+    background: url(/image/AdobeStock_311708671.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    height: 40vh;
+    border-radius: 40px 10px 40px 10px;
+}
+
+/*Ici il y aura le style pour le footer*/
+
+.container-footer {
+    width: 100vw;
+    height: 50vh;
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.container-footer footer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container-footer footer h2 {
+    font-size: 2rem;
+    padding: 20px;
+}
+
+.container-footer footer .services {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    width: 100%;
+    height: auto;
+}
+
+.container-footer footer .services #livraison {
+    grid-area: 1 / 1 / 3 / 4;
+    width: calc(100vw / 3);
+    padding: 20px;
+}
+
+.container-footer footer .services #paiement {
+    grid-area:1 / 4 / 3 / 7;
+    width: calc(100vw / 3);
+    padding: 20px;
+}
+
+.container-footer footer .services #remboursement {
+    grid-area: 1 / 7 / 3 / 10;
+    width: calc(100vw / 3);
+    padding: 20px;
+}
+
+.container-footer footer .end-contact {
+    padding: 20px;
+}
+
+
+
+
+/*Style de la page menu*/
+
+.container-menu {
+    width: 100vw;
+    height: auto;
+    padding: 20px;
+    /*display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    align-content: center;
+    justify-content: space-evenly;*/
+}
+
+.container-menu .food-articles {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(10, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 50px;
+}
+    
+.container-menu .food-articles #menu1 {
+    grid-area: 1 / 1 / 6 / 4;
+}
+
+.container-menu .food-articles #menu1 .photo-menu {
+    background: url(/image/pizzamenu/pizzzadore.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 354px;
+    height: 316px;
+}
+
+.container-menu .food-articles #menu2 {
+    grid-area: 1 / 4 / 6 / 7;
+}
+
+.container-menu .food-articles #menu2 .photo-menu {
+    padding: 20px;
+    background: url(/image/pizzamenu/2.jpeg);
+    background-repeat: no-repeat;
+    width: 354px;
+    height: 316px;
+    background-size: cover;
+}
+
+.container-menu .food-articles #menu3 {
+    grid-area: 1 / 7 / 6 / 10;
+}
+
+.container-menu .food-articles #menu3 .photo-menu {
+    padding: 20px;
+    background: url(/image/pizzamenu/3.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 354px;
+    height: 316px;
+}
+
+.container-menu .food-articles #menu4 {
+    grid-area: 1 / 10 / 6 / 13;
+}
+
+.container-menu .food-articles #menu4 .photo-menu {
+    padding: 20px;
+    background: url(/image/pizzamenu/4.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 354px;
+    height: 316px;
+}
+
+.container-menu .food-articles #menu5 {
+    grid-area: 6 / 1 / 11 / 4;
+}
+
+.container-menu .food-articles #menu5 .photo-menu {
+    padding: 20px;
+    background: url(/image/pizzamenu/5.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 354px;
+    height: 316px;
+}
+
+.container-menu .food-articles #menu6 {
+    grid-area: 6 / 4 / 11 / 7;
+}
+
+.container-menu .food-articles #menu6 .photo-menu {
+    padding: 20px;
+    background: url(/image/pizzamenu/6.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 354px;
+    height: 316px;
+}
+
+.container-menu .food-articles #menu7 {
+    grid-area: 6 / 7 / 11 / 10;
+}
+
+.container-menu .food-articles #menu7 .photo-menu {
+    padding: 20px;
+    background: url(/image/pizzamenu/7.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 354px;
+    height: 316px;
+}
+
+.container-menu .food-articles #menu8 {
+    grid-area: 6 / 10 / 11 / 13;
+}
+
+.container-menu .food-articles #menu8 .photo-menu {
+    padding: 20px;
+    background: url(/image/pizzamenu/8.jpeg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 354px;
+    height: 316px;
+}
+
+
+.pay-btn {
+    border: none;
+    border-radius: 40px 10px 40px 10px;
+    padding: 10px 20px;
+    background-color: rgb(34, 91, 137);
+    color: #FFF;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+}
+
+.pay-btn:hover {
+    background-color: rgb(53, 142, 214);
+}
+
+.description-menu {
+    color: rgba(42, 42, 42, 0.814);
+    font-size: 14px;
+    padding: 10px;
+}
+
+.nom-menu {
+    padding: 10px;
+    cursor: pointer;
+}
+    
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+  
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  
+h1 {
+    text-align: center;
+}
+  
+form {
+    display: flex;
+    flex-direction: column;
+}
+  
+label {
+    margin-bottom: 10px;
+}
+  
+input {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+  
+button[type="submit"] {
+    padding: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+  
+button[type="submit"]:hover {
+    background-color: #0069d9;
+}
+  
+#error-message {
+    color: #f00;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+  
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+  
+h1 {
+    text-align: center;
+}
+  
+.social-buttons {
+    display: flex;
+    justify-content: center;
+}
+  
+.social-buttons a {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 50%;
+    font-size: 24px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+  
+.instagram {
+    background-color: #c13584;
+}
+  
+.twitter {
+    background-color: #1da1f2;
+}
+  
+.facebook {
+    background-color: #3b5998;
+}
+  
+.whatsapp {
+    background-color: #25d366;
+}
+  
+.deliveroo {
+    background-color: #00ccbc;
+}
+  
+.social-buttons a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
